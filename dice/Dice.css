@@ -1,0 +1,85 @@
+* { box-sizing: border-box;}
+
+:root {
+  --dim: 50px
+}
+
+body { font-family: sans-serif; }
+
+.scene {
+  width: var(--dim);
+  height: var(--dim);
+  border: 1px solid #CCC;
+  margin: var(--dim);
+  perspective: calc(var(--dim)*2);
+}
+
+.cube {
+  width: var(--dim);
+  height: var(--dim);
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--dim)/-2));
+  transition: transform 1s;
+}
+
+.cube.show-front  { transform: translateZ(calc(var(--dim)/-2)) rotateY(   0deg); }
+.cube.show-right  { transform: translateZ(calc(var(--dim)/-2)) rotateY( -90deg); }
+.cube.show-back   { transform: translateZ(calc(var(--dim)/-2)) rotateY(-180deg); }
+.cube.show-left   { transform: translateZ(calc(var(--dim)/-2)) rotateY(  90deg); }
+.cube.show-top    { transform: translateZ(calc(var(--dim)/-2)) rotateX( -90deg); }
+.cube.show-bottom { transform: translateZ(calc(var(--dim)/-2)) rotateX(  90deg); }
+
+.cube__face {
+  position: absolute;
+  width: var(--dim);
+  height: var(--dim);
+  border: 2px solid black;
+  line-height: var(--dim);
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face--front  { background-image: url("./dice/face/152.jpg");   background-repeat: no-repeat;   background-position: center;  background-size: cover;  border-color: hsla(  0, 100%, 50%, 0.7);} /*1 - t*/ 
+.cube__face--bottom { background-image: url("./dice/face/152.jpg");   background-repeat: no-repeat;   background-position: center;  background-size: cover;  border-color: hsla(300, 100%, 50%, 0.7);} /*6 - t*/ 
+.cube__face--right  { background-image:  url("./dice/face/36.jpg");   background-repeat: no-repeat;   background-position: center;  background-size: cover;  border-color: hsla( 60, 100%, 50%, 0.7);} /*2 - f*/ 
+.cube__face--left   { background-image:   url("./dice/face/4.jpg");   background-repeat: no-repeat;   background-position: center;  background-size: cover;  border-color: hsla(180, 100%, 50%, 0.7);} /*4 - t*/ 
+.cube__face--top    { background-image: url("./dice/face/152.jpg");   background-repeat: no-repeat;   background-position: center;  background-size: cover;  border-color: hsla(240, 100%, 50%, 0.7);} /*5 - t*/ 
+.cube__face--back   { background-image:  url("./dice/face/36.jpg");   background-repeat: no-repeat;   background-position: center;  background-size: cover;  border-color: hsla(120, 100%, 50%, 0.7);} /*3 - t*/ 
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(calc(var(--dim)/2)); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(calc(var(--dim)/2)); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(calc(var(--dim)/2)); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(calc(var(--dim)/2)); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(calc(var(--dim)/2)); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(calc(var(--dim)/2)); }
+
+.bordless {border: 2px solid black !important;}
+
+
+
+
+.stg {
+  position: absolute;
+  display:block;
+  right:0;
+  top:0;
+  width:20%
+}
+.dices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: calc(var(--dim)/2);
+  width:80%
+;}
+.dices heroquest-dice {
+  padding: 0;
+  margin: 0;
+  width: calc(var(--dim)*2);
+  height: calc(var(--dim)*2);
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+    <link rel="stylesheet" href="./Dice.css">
+    <script src="./js/anime/anime.min.js"></script>
+    <script src="./js/rotate.js"></script>
+</head>
+<body>
+  <div class="scene">
+    <div class="cube" style="transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);">
+      <div class="bordless cube__face cube__face--front " cube-face-value="1"> <!--front --> </div>
+      <div class="bordless cube__face cube__face--back  " cube-face-value="6"> <!--back  --> </div>
+      <div class="bordless cube__face cube__face--right " cube-face-value="3"> <!--right --> </div>
+      <div class="bordless cube__face cube__face--left  " cube-face-value="4"> <!--left  --> </div>
+      <div class="bordless cube__face cube__face--top   " cube-face-value="5"> <!--top   --> </div>
+      <div class="bordless cube__face cube__face--bottom" cube-face-value="2"> <!--bottom--> </div>
+    </div>
+  </div>
+  <button id="roll" onclick="roll()" style="display: block">ROLL</button>
+  <div>
+    <span>Settings: </span>
+    <br>
+    <span>Giri:</span>
+    <br>
+    <label for="nmingiri">min</label>
+    <br>
+    <input id="nmingiri" type="number" value="100" min="1">
+    <br>
+    <label for="nmaxgiri">max</label>
+    <br>
+    <input id="nmaxgiri" type="number" value="1000" min="1">
+  </div>
+  
+</body>
+</html>

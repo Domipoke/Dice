@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+    <link rel="stylesheet" href="./Dice.css">
+    <link rel="stylesheet" href="./Utils.css">
+    <script src="./js/anime/anime.min.js"></script>
+    <script src="./js/Cube.js"></script>
+    <script src="./js/rotate.js"></script>
+</head>
+<body onload="onload()">
+  <button id="roll" onclick="roll()" style="display: block">ROLL</button>
+  <div class="dices" item-len="21%">
+    <heroquest-dice></heroquest-dice>
+  </div>
+  <div class="stg">
+    <span>Settings: </span>
+    <br>
+    <span>Dadi:</span>
+    <br>
+    <input onchange="spawnDices()" class="howmanyDice" value="1" min="1" max="100" type="number">
+    <br><br>
+    <span>Giri:</span>
+    <br>
+    <label for="nmingiri">min</label>
+    <br>
+    <input id="nmingiri" type="number" value="100" min="1">
+    <br>
+    <label for="nmaxgiri">max</label>
+    <br>
+    <input id="nmaxgiri" type="number" value="1000" min="1">
+    <br><br>
+    <span>Bordi colorati: </span>
+    <input type="checkbox" checked class="coloredborderinput" onchange="border()">
+  </div>
+</body>
+</html>
